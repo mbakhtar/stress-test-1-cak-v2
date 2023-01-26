@@ -1,0 +1,12 @@
+{
+    "roles": [
+        {
+            "name": "servo2",
+            "service": 318542083
+        },
+        {
+            "name": "servo3",
+            "service": 318542083
+        }
+    ]
+}

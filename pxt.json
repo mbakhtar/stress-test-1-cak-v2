@@ -1,5 +1,5 @@
 {
-    "name": "Stress Test-1-CAK v2",
+    "name": "Stress Test-1-CAK v2 #2",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -18,7 +18,9 @@
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "README.md",
+        "jacdac.json",
+        "jacdac.ts"
     ],
     "testFiles": [
         "test.ts"

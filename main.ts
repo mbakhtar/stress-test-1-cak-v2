@@ -1,17 +1,27 @@
-modules.soilMoisture1.onMoistureChangedBy(5, function () {
-    modules.led1.setPixelColor(2, 0xff0000)
+modules.soilMoisture1.onMoistureChangedBy(25, function () {
+    modules.led1.setPixelColor(2, 0x7f00ff)
+    modules.relay1.setActive(true)
 })
-modules.lightLevel2.onLightLevelChangedBy(5, function () {
-    modules.led1.setPixelColor(3, 0xff0000)
-})
-modules.distance1.onDistanceChangedBy(1, function () {
+modules.distance1.onDistanceChangedBy(0.5, function () {
     modules.led1.setPixelColor(1, 0xff0000)
+    basic.pause(1000)
+    modules.led1.setPixelColor(1, 0x0000ff)
+    basic.pause(1000)
 })
 modules.button2.onEvent(jacdac.ButtonEvent.Hold, function () {
     modules.led1.setPixelColor(4, 0x00ff00)
 })
 modules.rotaryEncoder1.onPositionChanged(function (delta) {
-    modules.led1.setPixelColor(0, 0xff0000)
+    modules.led1.setPixelColor(0, 0xffff00)
+    basic.pause(1000)
+    modules.led1.setPixelColor(0, 0x00ff00)
+    basic.pause(1000)
+})
+modules.lightLevel2.onLightLevelChangedBy(25, function () {
+    modules.led1.setPixelColor(3, 0xff8000)
+    basic.pause(1000)
+    modules.led1.setPixelColor(3, 0xffff00)
+    basic.pause(1000)
 })
 modules.button2.onEvent(jacdac.ButtonEvent.Up, function () {
     modules.relay1.setActive(false)
@@ -23,12 +33,18 @@ modules.button2.onEvent(jacdac.ButtonEvent.Down, function () {
 })
 basic.showIcon(IconNames.Heart)
 modules.servo1.setEnabled(true)
+myModules.servo2.setEnabled(true)
+myModules.servo3.setEnabled(true)
 modules.led1.setAll(0xff0000)
 basic.pause(2000)
 modules.led1.setAll(0x000000)
 basic.forever(function () {
     modules.servo1.setAngle(90)
+    myModules.servo2.setAngle(90)
+    myModules.servo3.setAngle(90)
     basic.pause(1000)
     modules.servo1.setAngle(-90)
+    myModules.servo2.setAngle(-90)
+    myModules.servo2.setAngle(-90)
     basic.pause(1000)
 })
